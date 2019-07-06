@@ -1,0 +1,5 @@
+<%= @article.title %>
+<%= image_tag "#{@article.image}" %>
+<%= @article.user.name %>
+<%= link_to "編集", edit_article_path %>
+<%= link_to "削除", @article, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
