@@ -1,0 +1,25 @@
+<div class="row mx-auto col-6">
+  <%= form_with model: @article do |f| %>
+  <div class="form-group">
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <div id="img_field" onClick="$('#file').click()" >
+      <% if @article.image.url.present? %>
+        <%= image_tag(@article.image.url) %>
+      <% else %>
+        <i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
+      <% end %>
+    </div>
+    <%= f.file_field :image, class: "image", style: "display:none;", id: "file"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, "内容" %>
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+
+  <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+
+  <% end %>
+</div>
