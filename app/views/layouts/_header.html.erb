@@ -1,0 +1,21 @@
+<header class="w-100 clearfix align-items-center col-12 row">
+  <div class="col-2 pl-0">
+    <h1><%= link_to "Pet Diary", root_path, class: "logo" %></h1>
+  </div>
+  <div class="btn-group header--nav col-1 h-50">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="dropdownMenu">
+    メニュー
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+      <% if user_signed_in? %>
+        <%= link_to "マイページ", current_user, class: "dropdown-item" %>
+        <%= link_to "新規投稿", new_article_path, data: { turbolinks: false }, class: "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "dropdown-item" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "dropdown-item" %>
+      <% end %>
+    </div>
+  </div>
+</header>
