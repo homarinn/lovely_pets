@@ -1,5 +1,12 @@
-<%= @article.title %>
-<%= image_tag "#{@article.image}" %>
-<%= @article.user.name %>
-<%= link_to "編集", edit_article_path %>
-<%= link_to "削除", @article, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<div class="col-8 mx-auto">
+  <div class="media col-12 p-0">
+    <img class="w-25" src="<%= @article.image %>">
+    <div class="media-body h-25 w-75">
+      <h5 class="mt-0 mb-1 pl-3"><%= link_to @article.user.name, @article.user, class: "user-link" %></h5>
+      <h3 class="mt-0 mb-1 pl-3 r_name"><%= @article.title %></h3>
+    </div>
+  </div>
+  <div class="col-12 border">
+    <p><%= @article.content %></p>
+  </div>
+</div>
