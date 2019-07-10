@@ -1,0 +1,12 @@
+<div class="col-2">
+  <%= @user.image %>
+</div>
+
+<div class="col-8">
+  <ul>
+    <% @articles.each do |article| %>
+      <%= render "articles/article", article: article %>
+    <% end %>
+  </ul>
+  <h5 class="w-100"><%= paginate(@articles) %></h5>
+</div>
