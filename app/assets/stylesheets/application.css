@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ html, body {
+  background-color: 	#FFFFDD;
+ }
+
 header {
   background-color: 	#FFBEDA;
   height: 80px;
@@ -122,4 +126,13 @@ a:hover {
   transition: 0.3s ease-out;
   display: block;
   color: #fff;
+}
+
+.form-content {
+  min-height: 400px;
+}
+
+.content {
+  min-height: 300px;
+  background-color: rgb(250,250,250);
 }
